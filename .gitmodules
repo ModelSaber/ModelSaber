@@ -1,6 +1,6 @@
-[submodule ".\\ModelSaber.Main\\"]
-	path = .\\ModelSaber.Main\\
+[submodule "ModelSaber.Main"]
+	path = ModelSaber.Main
 	url = git@github.com:ModelSaber/ModelSaber.Main.git
-[submodule ".\\ModelSaber.API\\"]
-	path = .\\ModelSaber.API\\
+[submodule "ModelSaber.API"]
+	path = ModelSaber.API
 	url = git@github.com:ModelSaber/ModelSaber.API.git
