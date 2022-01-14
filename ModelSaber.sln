@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31702.278
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelSaber.Main", "ModelSaber.Main\ModelSaber.Main.csproj", "{70CE7040-6657-46F9-AB53-64465163259E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelSaber.API", "ModelSaber.API\ModelSaber.API.csproj", "{E99236DA-9730-4994-8760-C7C13DF35531}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelSaber.Models", "ModelSaber.Models\ModelSaber.Models.csproj", "{54430C04-BBB0-437E-88FF-992961A65044}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{E99236DA-9730-4994-8760-C7C13DF35531}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E99236DA-9730-4994-8760-C7C13DF35531}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E99236DA-9730-4994-8760-C7C13DF35531}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54430C04-BBB0-437E-88FF-992961A65044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54430C04-BBB0-437E-88FF-992961A65044}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54430C04-BBB0-437E-88FF-992961A65044}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54430C04-BBB0-437E-88FF-992961A65044}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
