@@ -6,7 +6,7 @@ namespace ModelSaber.Models
 {
     public class Model : BaseId
     {
-        public int UserId { get; set; }
+        public uint UserId { get; set; }
         public Guid Uuid { get; set; }
         public TypeEnum Type { get; set; }
         public Status Status { get; set; }
@@ -28,8 +28,8 @@ namespace ModelSaber.Models
 
     public class ModelVariation : BaseId
     {
-        public int ModelId { get; set; }
-        public int ParentModelId { get; set; }
+        public uint ModelId { get; set; }
+        public uint ParentModelId { get; set; }
         [JsonIgnore]
         public virtual Model Model { get; set; } = null!;
         [JsonIgnore]
@@ -38,8 +38,8 @@ namespace ModelSaber.Models
 
     public class ModelUser : BaseId
     {
-        public int ModelId { get; set; }
-        public int UserId { get; set; }
+        public uint ModelId { get; set; }
+        public uint UserId { get; set; }
         [JsonIgnore]
         public virtual Model Model { get; set; } = null!;
         [JsonIgnore]
@@ -48,8 +48,8 @@ namespace ModelSaber.Models
 
     public class Vote : BaseId
     {
-        public int ModelId { get; set; }
-        public int UserId { get; set; }
+        public uint ModelId { get; set; }
+        public uint UserId { get; set; }
         public bool DownVote { get; set; }
         [JsonIgnore]
         public virtual Model Model { get; set; } = null!;

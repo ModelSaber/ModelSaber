@@ -6,6 +6,6 @@ namespace ModelSaber.Models
 {
     public class BaseId
     {
-        public int Id { get; set; }
+        public uint Id { get; set; }
     }
 }

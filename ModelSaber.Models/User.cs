@@ -26,7 +26,7 @@ namespace ModelSaber.Models
     public class UserTags : BaseId
     {
         public string Name { get; set; } = null!;
-        public int UserId { get; set; }
+        public uint UserId { get; set; }
         [JsonIgnore]
         public virtual User User { get; set; } = null!;
     }
@@ -47,7 +47,7 @@ namespace ModelSaber.Models
     public class UserLogons
     {
         public Guid Id { get; set; }
-        public int UserId { get; set; }
+        public uint UserId { get; set; }
         public virtual User? User { get; set; }
     }
 }
