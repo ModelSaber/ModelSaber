@@ -12,7 +12,7 @@ namespace ModelSaber.Models
         public Status Status { get; set; }
         public Platform Platform { get; set; }
         public ThumbnailEnum? ThumbnailExt { get; set; }
-        public string? Name { get; set; }
+        public string Name { get; set; } = "";
         public string? Hash { get; set; }
         public string? Description { get; set; }
         public string Thumbnail => !ThumbnailExt.HasValue ? "isfmoment.webm" : $"images/{Uuid}{ThumbnailExt?.GetThumbExt()}";
