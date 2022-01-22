@@ -49,7 +49,8 @@ namespace ModelSaber.Models
     public class Vote : BaseId
     {
         public uint ModelId { get; set; }
-        public uint UserId { get; set; }
+        public uint? UserId { get; set; }
+        public string? GameId { get; set; }
         public bool DownVote { get; set; }
         [JsonIgnore]
         public virtual Model Model { get; set; } = null!;
