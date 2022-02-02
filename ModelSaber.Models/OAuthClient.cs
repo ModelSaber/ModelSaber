@@ -8,12 +8,21 @@ namespace ModelSaber.Models
 {
     public class OAuthClient : BaseId
     {
+        public string Name { get; set; } = "";
         public Guid ClientId { get; set; }
-        public string ClientSecret { get; set; }
-        public byte[] SecKey { get; set; }
+        public uint UserId { get; set; }
+        public string ClientSecret { get; set; } = "";
+        public byte[] SecKey { get; set; } = Array.Empty<byte>();
         public string? RedirectUri { get; set; }
         public string? Scope { get; set; }
-        public virtual List<OAuthToken> Tokens { get; set; }
+        public virtual List<OAuthToken> Tokens { get; set; } = null!;
+        public virtual User User { get; set; } = null!;
+
+        public void Init()
+        {
+            ClientSecret = Convert.ToBase64String(getKey());
+            InitSecKey();
+        }
 
         public void InitSecKey()
         {
@@ -43,19 +52,27 @@ namespace ModelSaber.Models
             return new OAuthToken
             {
                 ClientId = Id,
-                Token = sha.ComputeHash(bytes)
+                Token = sha.ComputeHash(bytes),
+                ExpiresIn = 86400
             };
+        }
+
+        public dynamic GetClientJson()
+        {
+            return new { Id, Name, ClientSecret, ClientId, RedirectUri, Scope };
         }
     }
 
     public class OAuthToken : BaseId
     {
         public uint ClientId { get; set; }
-        public byte[] Token { get; set; }
+        public uint? UserId { get; set; }
+        public byte[] Token { get; set; } = Array.Empty<byte>();
         public DateTime InsertedAt { get; set; }
         public uint ExpiresIn { get; set; }
-        public virtual OAuthClient Client { get; set; }
-        public byte[] Refresh { get; set; }
+        public virtual OAuthClient Client { get; set; } = null!;
+        public virtual User? User { get; set; }
+        public byte[] Refresh { get; set; } = Array.Empty<byte>();
         public string? Scope { get; set; }
 
         public bool IsExpired()
