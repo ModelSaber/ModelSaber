@@ -17,7 +17,7 @@ jobs:
       run: echo "::set-output name=date::$(date +'%Y.%-m.%-d')"
 
     - name: Print new build tag
-      run: echo ${{ steps.date.outputs.date }}.${{ github.run_number }}
+      run: echo ${{ steps.date.outputs.date }}.$(expr ${{ github.run_number }} % 10)
 
     - uses: actions/checkout@v2
       with:
