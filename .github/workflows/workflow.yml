@@ -87,7 +87,6 @@ jobs:
         draft: false
         prerelease: false
     - name: Upload Release Asset Main
-      id: upload-release-asset 
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -97,7 +96,6 @@ jobs:
         asset_name: dotnet-main-app.tgz
         asset_content_type: application/tar+gzip
     - name: Upload Release Asset API
-      id: upload-release-asset 
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
