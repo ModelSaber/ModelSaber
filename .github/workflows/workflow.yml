@@ -16,9 +16,6 @@ jobs:
       id: date
       run: echo "::set-output name=date::$(date +'%Y.%-m.%-d')"
 
-    - name: Print new build tag
-      run: echo ${{ steps.date.outputs.date }}.$(expr ${{ github.run_number }} % 10)
-
     - uses: actions/checkout@v2
       with:
         submodules: 'recursive'
@@ -36,7 +33,7 @@ jobs:
       run: |
         cd ModelSaber.Main
         dotnet build -c Release --no-restore
-        dotnet publish -c Release -o ./dotnet-app -r linux-x64 /p:PublishSingleFile=true /p:Version=${{ steps.date.outputs.date }}.${{ github.run_id }}
+        dotnet publish -c Release -o ./dotnet-app -r linux-x64 /p:PublishSingleFile=true /p:Version=${{ steps.date.outputs.date }}.$(expr ${{ github.run_number }} % 10)
 
     - name: Zip files Main
       run: |
