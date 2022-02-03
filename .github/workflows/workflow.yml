@@ -14,10 +14,10 @@ jobs:
     steps:
     - name: Get current date
       id: date
-      run: echo "::set-output name=date::$(date +'%Y.%m.%d')"
+      run: echo "::set-output name=date::$(date +'%Y.%-m.%-d')"
 
     - name: Print new build tag
-      run: echo ${{ steps.date.outputs.date }}.${{ github.job_id }}
+      run: echo ${{ steps.date.outputs.date }}.${{ github.run_number }}
 
     - uses: actions/checkout@v2
       with:
