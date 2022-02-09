@@ -62,7 +62,7 @@ namespace ModelSaber.Models
                 TypeEnum.Platform => "plat",
                 TypeEnum.Saber => "saber",
                 TypeEnum.Wall => "wall",
-                TypeEnum.Effect => "", // unknown TODO ask raine when their not hungover
+                TypeEnum.Effect => "effect",
                 TypeEnum.HealthBar => "energy",
                 _ => throw new ArgumentException("Could not get type extension from param", nameof(en))
             };
