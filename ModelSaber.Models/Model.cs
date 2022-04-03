@@ -15,7 +15,7 @@ namespace ModelSaber.Models
         public string Name { get; set; } = "";
         public string? Hash { get; set; }
         public string? Description { get; set; }
-        public string Thumbnail => !ThumbnailExt.HasValue ? "isfmoment.webm" : $"images/{Uuid}{ThumbnailExt?.GetThumbExt()}";
+        public string Thumbnail => !ThumbnailExt.HasValue ? "null" : $"images/{Uuid}{ThumbnailExt?.GetThumbExt()}";
         public string DownloadPath => $"download?id={Uuid}";
         public DateTime Date { get; set; }
         public virtual ICollection<ModelTag> Tags { get; set; } = null!;
