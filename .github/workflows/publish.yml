@@ -2,7 +2,8 @@ name: publish
 
 on:
   push:
-    branch: [ master ]
+    branches:
+      - master
 
 env:
   DOTNET_VER: '6.0.x'
