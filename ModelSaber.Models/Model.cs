@@ -17,6 +17,11 @@ namespace ModelSaber.Models
         public string? Description { get; set; }
         public string Thumbnail => !ThumbnailExt.HasValue ? "null" : $"images/{Uuid}{ThumbnailExt?.GetThumbExt()}";
         public string DownloadPath => $"download?id={Uuid}";
+        public string MinVersion { get; set; } = "";
+        public string BuildVersion { get; set; } = "";
+        public string UnitySystem { get; set; } = "";
+        public int UnitySystemVersion { get; set; }
+        public bool Nsfw { get; set; }
         public DateTime Date { get; set; }
         public virtual ICollection<ModelTag> Tags { get; set; } = null!;
         public virtual ICollection<ModelVariation> ModelVariations { get; set; } = null!;
