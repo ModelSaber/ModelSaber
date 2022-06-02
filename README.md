@@ -5,16 +5,10 @@ Main Folder for sln file
 
 You need to run `git clone [Repo Link] --recurse-submodules` in your IDE/CLI/Git Client to get the files at all.
 
-## API Structure
+## Structure
 
-#### Components
+### Main
+Front-end and 
 
-Base components for API
-
-#### PC
-
-PC endpoints
-
-#### Quest
-
-Quest endpoints
+### API
+GraphQL endpoint for 3rd party use
