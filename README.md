@@ -8,7 +8,7 @@ You need to run `git clone [Repo Link] --recurse-submodules` in your IDE/CLI/Git
 ## Structure
 
 ### Main
-Front-end and 
+Front-end and authorization heavy endpoints
 
 ### API
 GraphQL endpoint for 3rd party use
