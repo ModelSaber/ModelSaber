@@ -57,7 +57,7 @@ jobs:
     - name: Zip files Main
       run: |
         cd ModelSaber.Main
-        mv ./dotnet-app/ClientApp/build ./dotnet-app/dist
+        mv ./dotnet-app/ClientApp/dist ./dotnet-app/dist
         rm -r ./dotnet-app/ClientApp
         cd ./dotnet-app
         tar -zcvf ../../dotnet-main-app.tgz .
