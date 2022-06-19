@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 
 namespace ModelSaber.Models
 {
@@ -66,5 +68,11 @@ namespace ModelSaber.Models
                 TypeEnum.HealthBar => "energy",
                 _ => throw new ArgumentException("Could not get type extension from param", nameof(en))
             };
+
+        public static IEnumerable<T> GetListFromFlag<T>(this T en) where T : Enum
+            => Enum.GetValues(typeof(T)).Cast<T>().Where(v => en.HasFlag(v));
+
+        public static T GetFlagFromList<T>(this IEnumerable<T> en) where T : Enum
+            => (T)(object)en.Aggregate(0, (current, v) => current | (int)(object)v);
     }
 }
