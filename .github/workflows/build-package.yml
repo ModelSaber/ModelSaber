@@ -20,7 +20,7 @@ jobs:
       run: dotnet pack ModelSaber.Models/ModelSaber.Models.csproj -c Release /p:Version=${VERSION}
 
     - name: Prep packages
-      run: dotnet nuget add source --username ${{ secrets.GITHUB_USER }} --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/ModelSaber/index.json"
+      run: dotnet nuget add source --username ${{ secrets.RUNNER_USER }} --password ${{ secrets.RUNNER_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/ModelSaber/index.json"
 
     - name: Publish to GitHub packages
-      run: dotnet nuget push ModelSaber.Models/bin/Release/*.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source "github"
+      run: dotnet nuget push ModelSaber.Models/bin/Release/*.nupkg --api-key ${{ secrets.RUNNER_TOKEN }} --source "github"
