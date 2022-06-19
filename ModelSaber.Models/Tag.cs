@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+#if NETSTANDARD2_1_OR_GREATER
 using System.Text.Json.Serialization;
+#else
+using Newtonsoft.Json;
+#endif
 
 namespace ModelSaber.Models
 {

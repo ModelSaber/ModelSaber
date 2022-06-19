@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+#if NETSTANDARD2_1_OR_GREATER
 using System.Text.Json.Serialization;
+#else
+using Newtonsoft.Json;
+#endif
 
 namespace ModelSaber.Models
 {
@@ -23,11 +27,17 @@ namespace ModelSaber.Models
         public int UnitySystemVersion { get; set; }
         public bool Nsfw { get; set; }
         public DateTime Date { get; set; }
+        [JsonIgnore]
         public virtual ICollection<ModelTag> Tags { get; set; } = null!;
+        [JsonIgnore]
         public virtual ICollection<ModelVariation> ModelVariations { get; set; } = null!;
+        [JsonIgnore]
         public virtual ICollection<ModelUser> Users { get; set; } = null!;
+        [JsonIgnore]
         public virtual ICollection<Vote> Votes { get; set; } = null!;
+        [JsonIgnore]
         public virtual ModelVariation ModelVariation { get; set; } = null!;
+        [JsonIgnore]
         public virtual User User { get; set; } = null!;
     }
 
