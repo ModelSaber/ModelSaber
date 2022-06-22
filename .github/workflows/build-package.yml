@@ -2,8 +2,7 @@ name: "Build"
 
 on: 
   push:
-    tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
+    branches: [ "master" ]
 
 jobs:
   publish:
@@ -27,7 +26,7 @@ jobs:
       run: dotnet pack ModelSaber.Models/ModelSaber.Models.csproj -c Release /p:Version=${{ steps.version.outputs.new_version }} /p:PackageReleaseNotes="${{ steps.version.outputs.changelog }}"
 
     - name: Prep packages
-      run: dotnet nuget add source --username ${{ secrets.RUNNER_USER }} --password ${{ secrets.RUNNER_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/ModelSaber/index.json"
+      run: dotnet nuget add source --username github-actions[bot] --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/ModelSaber/index.json"
 
     - name: Publish to GitHub packages
-      run: dotnet nuget push ModelSaber.Models/bin/Release/ModelSaber.Models.${{ steps.version.outputs.new_version }}.nupkg --api-key ${{ secrets.RUNNER_TOKEN }} --source "github"
+      run: dotnet nuget push ModelSaber.Models/bin/Release/ModelSaber.Models.${{ steps.version.outputs.new_version }}.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source "github"
