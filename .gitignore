@@ -351,3 +351,5 @@ MigrationBackup/
 
 # Idea
 .idea/
+
+nuget.config
