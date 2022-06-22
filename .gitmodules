@@ -4,3 +4,6 @@
 [submodule "ModelSaber.API"]
 	path = ModelSaber.API
 	url = git@github.com:ModelSaber/ModelSaber.API.git
+[submodule "ModelSaber.Updater"]
+	path = ModelSaber.Updater
+	url = ./ModelSaber.Updater/
