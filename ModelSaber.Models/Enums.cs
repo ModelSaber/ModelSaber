@@ -73,6 +73,6 @@ namespace ModelSaber.Models
             => Enum.GetValues(typeof(T)).Cast<T>().Where(v => en.HasFlag(v));
 
         public static T GetFlagFromList<T>(this IEnumerable<T> en) where T : Enum
-            => (T)(object)(byte)en.Aggregate(0, (current, v) => current | (byte)(object)v);
+            => (T)(object)en.Aggregate<T, byte>(0, (current, v) => (byte)(current | (byte)(object)v));
     }
 }
